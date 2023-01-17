@@ -1,0 +1,51 @@
+.container {
+
+    display: grid;
+  
+    justify-content: center;
+  
+    background-image: linear-gradient(
+  
+      to right,
+  
+      rgba(207, 55, 55, 0.839),
+  
+      rgb(76, 172, 205)
+  
+    );
+  
+    height: 550px;
+  
+  }
+  
+  h1 {
+  
+    color: thistle;
+  
+    margin-top: 50px;
+  
+  }
+  
+  #admbtn {
+  
+    margin-top: 50px;
+  
+    border-radius: 10px;
+  
+    background-color: rgb(72, 201, 237);
+  
+    height: 50px;
+  
+  }
+  
+  #usrbtn {
+  
+    height: 50px;
+  
+    margin-bottom: 60%;
+  
+    border-radius: 10px;
+  
+    background-color:rgb(196, 183, 142);
+  
+  }

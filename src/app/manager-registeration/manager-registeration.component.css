@@ -1,0 +1,14 @@
+.demo
+{
+    float: right;
+    color: rgb(133, 202, 133);
+    background-color: blanchedalmond;
+}
+body
+{
+    background-color: antiquewhite;
+}
+#h1
+{
+    text-align: center;
+}

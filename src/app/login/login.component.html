@@ -1,0 +1,52 @@
+<body class="body">
+<h3 id="h1">Login Page</h3>
+<div style="min-width:100%;min-height: 200%; margin-top:30px;">
+<div class="container" style="max-width: 600px;background-color:white; border:2px solid black ;height:400px">
+    
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+      
+      <small class="text-danger">{{message}}</small>
+      <div class="form-group" style="margin-top: 30px;padding-left: 30px;">
+        <label class="control-label col-sm-2" for="userid">Customer Id:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control"  placeholder="Enter User Id" name="userid" [(ngModel)]="user.userId" required pattern="^[0-9]{4,6}$" #userid="ngModel"
+          [class.is-invalid]="userid.invalid && userid.touched"
+          >
+          <div *ngIf="userid.errors && (userid.invalid && userid.touched)">
+            <small class="text-danger" *ngIf="userid?.errors?.['required']">User Id Is Required</small>
+            <small class="text-danger" *ngIf="userid?.errors?.['pattern']">Please Enter The Valid User Id</small>
+            </div>
+          <!-- <small class="text-danger" [class.d-none]="userid.valid ||userid.untouched">User Id Is Required</small> -->
+        </div>
+      </div>
+      <div class="form-group" style="padding-left: 30px;">
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-10">          
+          <input type="password" class="form-control" placeholder="Enter password" name="pwd" [(ngModel)]="user.password"
+          required pattern= "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$" #pwd="ngModel"  [class.is-invalid]="pwd.invalid && pwd.touched" >
+          <!-- <small class="text-danger" [class.d-none]="pwd.valid ||pwd.untouched">Password IS Required Field</small> -->
+          <div *ngIf="pwd.errors && (pwd.invalid && pwd.touched)">
+            <small class="text-danger" *ngIf="pwd?.errors?.['required']">Password Id Is Required</small>
+            <!-- <small class="text-danger" *ngIf="pwd?.errors?.['pattern']">password between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character</small> -->
+            </div>
+          <!-- <small class="text-danger" [class.d-none]="userid.valid ||userid.untouched">User Id Is Required</small> -->
+       
+        </div>
+        
+      </div>
+      <br>
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button [disabled]="loginForm.form.invalid" type="submit" class="btn btn-info" style="margin-left:30px">Login</button>
+          <button  class="btn btn-info" style="float: right;" (click)="gotoRegisteration()">New Customer ? Register Here</button>
+        </div>
+      </div>
+     
+
+     <!--<small class="demo"  >New User ? Register Here</small>-->
+
+    </form>
+    
+  </div>
+  </div>
+</body>
